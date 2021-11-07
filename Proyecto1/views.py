@@ -11,6 +11,7 @@ class Persona(object):
 
 def saludo(request): #primera vista
 
+    prueba=''
     p1=Persona('Jose','Diaz')
     temas=[]
     #nombre='Roberto'
