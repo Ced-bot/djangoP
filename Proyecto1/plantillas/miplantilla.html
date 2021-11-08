@@ -1,9 +1,26 @@
 <html>
     <body>
+
+        {% include "superior/barra.html" %}
+
     <h2 style="color: red">
     Hola mundo, ahora tengo el PODERRRRRR
     </h2>
-    <p>El nombre del alumno es: {{nombre_persona.upper}} {{apellido_persona}}</p>
+    <!--Esto es comentario
+    segunda linea-->
+    {# esto es un comentario tambien #}
+    {% comment %}
+    esto tambien es un comentario
+    {% endcomment %}
+
+    {% if nombre_persona == 'Jose' %}
+        <p>El curso es visto por Jose</p>
+    
+    {% else %}
+        <P>El curso es visto por un weon</P>
+    {% endif %}
+
+    <p>El nombre del alumno es: {{nombre_persona|upper}} {{apellido_persona.upper}}</p>
     
     <p>Estamos viendo el tema de las plantillas a d&iacute;a: {{momento_actual.day}} / {{momento_actual.month}} / {{momento_actual.year}}</p>
     <!--Estructura repertitiva y condicionales-->
@@ -12,7 +29,8 @@
         <ul>
         {% if temas %}
             {% for i in temas %}
-                <li>{{i}}</li>
+                <!--Se ´puede colocar varios filtros-->
+                <li>{{i|first|lower}}</li>
             {% endfor %}
         {% else %}
             <p>No hay elementos que mostrar</p>
@@ -21,8 +39,6 @@
         </ul>
     </p>  
     <!--Esto es un nuevo comentario--> 
-    <p>Esta es una nueva secci&oacute;n</p>
-    <p>11111111 Nuevo parrafo</p>
-    <p>Nuevo parrafo 111111111111111111111111111111111</p>
+    
 </body>
     </html>
